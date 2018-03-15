@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":1,
-    "selecteID":58,
+    "selectedBox":43,
+    "selecteID":69,
     "props":{"width":800,"sceneColor":"#ffffff","height":600},
     "nodeParent":-1,
     "label":"View",
@@ -70,9 +70,23 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":84,"skin":"ui/mask-01.png"},
+                    "props":{"y":31,"x":66,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":6,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":60,
+                    "child":[
+                        ]
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":84,"x":0,"skin":"ui/mask-01.png"},
                     "nodeParent":6,
                     "label":"Image",
+                    "isOpen":true,
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
@@ -136,6 +150,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":37,"x":60,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":15,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":62,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -192,6 +219,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":40,"x":64,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":19,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":63,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -248,6 +288,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":41,"x":70,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":23,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":64,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -304,6 +357,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":33,"x":62,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":27,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":65,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -360,6 +426,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":42,"x":63,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":31,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":68,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -416,6 +495,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":38,"x":61,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":35,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":67,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -472,6 +564,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":32,"x":63,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":39,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":66,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },
@@ -528,6 +633,19 @@
                     "child":[
                         ],
                     "$HIDDEN":false
+                },
+                {
+                    "x":30,
+                    "type":"Image",
+                    "props":{"y":36,"x":59,"skin":"ui/score_2.png","name":"scoreImg","anchorY":0.5,"anchorX":0.5},
+                    "nodeParent":43,
+                    "label":"Image(scoreImg)",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":69,
+                    "child":[
+                        ]
                 }],
             "$HIDDEN":false
         },

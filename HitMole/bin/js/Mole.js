@@ -2,11 +2,14 @@
  * Mole
  */
 var Mole = (function () {
-    function Mole(normalState, hitState, downY) {
+    function Mole(normalState, hitState, scoreImg, downY, hitCallBackHd) {
         this.normalState = normalState;
         this.hitState = hitState;
+        this.scoreImg = scoreImg;
+        this.scoreY = this.scoreImg.y;
         this.downY = downY;
         this.upY = this.normalState.y;
+        this.hitCallBack = hitCallBackHd;
         this.reset();
         this.normalState.on(Laya.Event.MOUSE_DOWN, this, this.hit);
     }
@@ -17,6 +20,7 @@ var Mole = (function () {
         this.isActive = false;
         this.isShow = false;
         this.isHit = false;
+        this.scoreImg.visible = false;
     };
     //显示
     Mole.prototype.show = function () {
@@ -29,6 +33,7 @@ var Mole = (function () {
         this.hitState.skin = "ui/mouse_hit_" + this.type + ".png";
         this.normalState.y = this.downY;
         this.normalState.visible = true;
+        this.scoreImg.skin = "ui/score_" + this.type + ".png";
         Laya.Tween.to(this.normalState, { y: this.upY }, 500, Laya.Ease.backOut, Laya.Handler.create(this, this.showComplete));
     };
     //停留
@@ -52,8 +57,17 @@ var Mole = (function () {
             Laya.timer.clear(this, this.hide);
             this.normalState.visible = false;
             this.hitState.visible = true;
+            this.hitCallBack.runWith(this.type);
             Laya.timer.once(500, this, this.reset);
+            this.showScore();
         }
+    };
+    //显示得分飘字
+    Mole.prototype.showScore = function () {
+        this.scoreImg.visible = true;
+        this.scoreImg.y = this.scoreY + 30;
+        this.scoreImg.scale(0, 0);
+        Laya.Tween.to(this.scoreImg, { y: this.scoreY - 30, scaleX: 1, scaleY: 1 }, 300, Laya.Ease.backOut);
     };
     return Mole;
 }());

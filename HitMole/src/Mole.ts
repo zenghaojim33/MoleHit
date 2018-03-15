@@ -8,17 +8,20 @@ class Mole {
     private downY: number;              //地鼠隐藏前的最低坐标Y值。
     private scoreImg: Laya.Image;        //分数图片
     private scoreY: number;              //分数图片的最高点y值。
-
+    private hitCallBack:Laya.Handler;    //受击回调
     private isActive: boolean;          //当前地鼠是否已被激活
     private isShow: boolean;            //地鼠是否处于显示状态
     private isHit: boolean;             //地鼠是否处于受击状态
     private type:number;                //地鼠类型
 
-    constructor(normalState:Laya.Image,hitState:Laya.Image,downY:number) {
+    constructor(normalState:Laya.Image,hitState:Laya.Image,scoreImg:Laya.Image,downY:number,hitCallBackHd:Laya.Handler) {
         this.normalState = normalState;
         this.hitState = hitState;
+        this.scoreImg = scoreImg;
+        this.scoreY = this.scoreImg.y;
         this.downY = downY;
         this.upY = this.normalState.y;
+        this.hitCallBack = hitCallBackHd;
         this.reset();
         this.normalState.on(Laya.Event.MOUSE_DOWN,this,this.hit);
     }
@@ -29,6 +32,7 @@ class Mole {
         this.isActive = false;
         this.isShow = false;
         this.isHit = false;
+        this.scoreImg.visible = false;
     }
 
     //显示
@@ -41,6 +45,7 @@ class Mole {
         this.hitState.skin = "ui/mouse_hit_" + this.type + ".png";
         this.normalState.y = this.downY;
         this.normalState.visible = true;
+        this.scoreImg.skin = "ui/score_" + this.type + ".png";
         Laya.Tween.to(this.normalState,{y:this.upY},500,Laya.Ease.backOut,Laya.Handler.create(this,this.showComplete));
     }
 
@@ -65,7 +70,17 @@ class Mole {
             Laya.timer.clear(this,this.hide);
             this.normalState.visible = false;
             this.hitState.visible = true;
+            this.hitCallBack.runWith(this.type);
             Laya.timer.once(500,this,this.reset);
+            this.showScore();
         }
+    }
+    //显示得分飘字
+    showScore():void{
+        this.scoreImg.visible = true;
+        this.scoreImg.y = this.scoreY + 30;
+        this.scoreImg.scale(0,0);
+        Laya.Tween.to(this.scoreImg,{y:this.scoreY - 30,scaleX:1,scaleY:1},300,Laya.Ease.backOut);
+
     }
 }
